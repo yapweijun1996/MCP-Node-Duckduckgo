@@ -29,12 +29,12 @@
 
 7. Test the "search" Tool:
    • Run the following command in CMD (adjust the query if needed):
-       curl -X POST http://localhost:3000/run-tool -H "Content-Type: application/json" -d "{\"toolName\":\"search\", \"params\":{\"query\":\"test query\", \"maxResults\":5}}"
+       curl -X POST http://localhost:3000/run-tool -H "Content-Type: application/json" -d "{\"toolName\":\"search\",\"params\":{\"query\":\"test query\",\"maxResults\":5}}"
    • The response should include formatted search results from DuckDuckGo.
 
 8. Test the "fetchContent" Tool:
    • Execute this command:
-       curl -X POST http://localhost:3000/run-tool -H "Content-Type: application/json" -d "{\"toolName\":\"fetchContent\", \"params\":{\"url\":\"https://example.com\"}}"
+       curl -X POST http://localhost:3000/run-tool -H "Content-Type: application/json" -d '{"toolName": "fetchContent", "params": {"url": "https://www.channelnewsasia.com/singapore/ge2025-general-election-may-3-parliament-dissolved-5064316"}}'
    • The response will include a snippet of text extracted from the webpage.
 
 9. Review Logs and Debug:
