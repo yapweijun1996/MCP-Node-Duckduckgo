@@ -84,9 +84,7 @@ This should output a JSON list of registered tools (e.g., "search" and "fetchCon
 
 Execute a search query using the search tool:
 ```bash
-curl -X POST http://localhost:3000/run-tool \
--H "Content-Type: application/json" \
--d '{"toolName": "search", "params": {"query": "test query", "maxResults": 5}}'
+curl -X POST http://localhost:3000/run-tool -H "Content-Type: application/json" -d "{\"toolName\":\"search\",\"params\":{\"query\":\"test query\",\"maxResults\":5}}"
 ```
 The response will contain the formatted search results from DuckDuckGo.
 
@@ -94,9 +92,7 @@ The response will contain the formatted search results from DuckDuckGo.
 
 Fetch content from a specific webpage:
 ```bash
-curl -X POST http://localhost:3000/run-tool \
--H "Content-Type: application/json" \
--d '{"toolName": "fetchContent", "params": {"url": "https://example.com"}}'
+curl -X POST http://localhost:3000/run-tool -H "Content-Type: application/json" -d '{"toolName": "fetchContent", "params": {"url": "[https://example.com](https://news.google.com/home)"}}'
 ```
 The server will return a text snippet from the fetched webpage.
 
