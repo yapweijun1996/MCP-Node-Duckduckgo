@@ -92,7 +92,7 @@ The response will contain the formatted search results from DuckDuckGo.
 
 Fetch content from a specific webpage:
 ```bash
-curl -X POST http://localhost:3000/run-tool -H "Content-Type: application/json" -d '{"toolName": "fetchContent", "params": {"url": "[https://example.com](https://news.google.com/home)"}}'
+curl -X POST http://localhost:3000/run-tool -H "Content-Type: application/json" -d "{\"toolName\":\"fetchContent\",\"params\":{\"url\":\"https://www.channelnewsasia.com/singapore/ge2025-general-election-may-3-parliament-dissolved-5064316\"}}"
 ```
 The server will return a text snippet from the fetched webpage.
 
