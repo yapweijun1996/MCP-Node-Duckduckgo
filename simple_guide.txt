@@ -1,0 +1,45 @@
+1. Install Node.js:
+   • Download and install Node.js from https://nodejs.org.
+   • Open CMD (or Terminal) and verify installation with:
+     node -v
+
+2. Set Up the Project:
+   • Create a new folder named "mcp-node-duckduckgo-server".
+   • Place the file "mcp-node-duckduckgo-server.js" into this folder.
+
+3. Initialize the Project:
+   • Open CMD in the project folder.
+   • Run: npm init -y
+   • Install required dependencies:
+       npm install express axios cheerio
+
+4. Rename the File (if needed):
+   • Ensure your main server file is named "mcp-node-duckduckgo-server.js".
+
+5. Run the Server:
+   • In CMD, execute: node mcp-node-duckduckgo-server.js
+   • Look for a log message such as:
+     MCP Server "ddg-search" running on port 3000
+
+6. Test the Available Tools:
+   • Open a new CMD window.
+   • List the available tools by running:
+       curl http://localhost:3000/tools
+   • You should see a JSON list of the tools (e.g., "search" and "fetchContent").
+
+7. Test the "search" Tool:
+   • Run the following command in CMD (adjust the query if needed):
+       curl -X POST http://localhost:3000/run-tool -H "Content-Type: application/json" -d "{\"toolName\":\"search\", \"params\":{\"query\":\"test query\", \"maxResults\":5}}"
+   • The response should include formatted search results from DuckDuckGo.
+
+8. Test the "fetchContent" Tool:
+   • Execute this command:
+       curl -X POST http://localhost:3000/run-tool -H "Content-Type: application/json" -d "{\"toolName\":\"fetchContent\", \"params\":{\"url\":\"https://example.com\"}}"
+   • The response will include a snippet of text extracted from the webpage.
+
+9. Review Logs and Debug:
+   • Monitor the CMD window running the server for informational and error messages.
+   • Use these logs to identify any issues such as timeouts or HTTP errors.
+
+10. Stop the Server:
+    • In the CMD window where the server is running, press CTRL+C to terminate the process.
